@@ -84,7 +84,7 @@ export default class Document extends Component {
   onSourceSuccess = (source) => {
     callIfDefined(this.props.onSourceSuccess);
 
-    if (!PDFJS) {
+    if (!window.PDFJS) {
       throw new Error('Could not load the document. PDF.js is not loaded.');
     }
 
@@ -96,7 +96,7 @@ export default class Document extends Component {
       return null;
     }
 
-    this.runningTask = makeCancellable(PDFJS.getDocument(source));
+    this.runningTask = makeCancellable(window.PDFJS.getDocument(source));
 
     return this.runningTask.promise
       .then(this.onLoadSuccess)

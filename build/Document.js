@@ -106,7 +106,7 @@ var Document = function (_Component) {
     }, _this.linkService = new _LinkService2.default(), _this.onSourceSuccess = function (source) {
       (0, _util.callIfDefined)(_this.props.onSourceSuccess);
 
-      if (!PDFJS) {
+      if (!window.PDFJS) {
         throw new Error('Could not load the document. PDF.js is not loaded.');
       }
 
@@ -118,7 +118,7 @@ var Document = function (_Component) {
         return null;
       }
 
-      _this.runningTask = (0, _util.makeCancellable)(PDFJS.getDocument(source));
+      _this.runningTask = (0, _util.makeCancellable)(window.PDFJS.getDocument(source));
 
       return _this.runningTask.promise.then(_this.onLoadSuccess).catch(_this.onLoadError);
     }, _this.onSourceError = function (error) {

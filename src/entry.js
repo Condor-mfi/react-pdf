@@ -10,9 +10,9 @@ if (isLocalFileSystem) {
   warnOnDev('You are running React-PDF from your local file system. PDF.js Worker may fail to load due to browser\'s security policies. If you\'re on Google Chrome, you can use --allow-file-access-from-files flag for debugging purposes.');
 }
 
-const pdfjs = require('pdfjs-dist');
+// const pdfjs = require('pdfjs-dist');
 
-const setOptions = makeSetOptions(pdfjs);
+const setOptions = makeSetOptions();
 
 setOptions({
   workerSrc: 'pdf.worker.js',

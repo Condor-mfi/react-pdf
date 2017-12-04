@@ -1,6 +1,7 @@
 .vscode
 .idea
-node_modules
+node_modules/*
+!node_modules/pdfjs-dist
 sample/build
 sample/package-lock.json
 test/build
